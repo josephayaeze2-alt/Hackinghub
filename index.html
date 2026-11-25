@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090612">
+<title>HACKING HUB</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #090612;
+  color: white;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+header {
+  padding: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #32145c;
+  background: #10091d;
+}
+
+.logo {
+  color: #c18aff;
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px #a64dff;
+}
+
+.status {
+  color: #b98aff;
+  font-size: 12px;
+}
+
+main {
+  max-width: 850px;
+  margin: auto;
+  padding: 25px 18px 110px;
+}
+
+.hero {
+  text-align: center;
+  padding: 35px 10px;
+}
+
+.hero h1 {
+  font-size: 38px;
+  color: #c38aff;
+  text-shadow: 0 0 25px #8b36ff;
+}
+
+.hero p {
+  color: #aaa0b9;
+  margin-top: 12px;
+}
+
+.panel {
+  background: linear-gradient(145deg,#171025,#0e0918);
+  border: 1px solid #45216d;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 18px 0;
+  box-shadow: 0 0 20px #6c25a522;
+}
+
+.panel h2 {
+  color: #c38aff;
+  margin-bottom: 15px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 12px;
+}
+
+.tool {
+  background: #211433;
+  border: 1px solid #56317c;
+  border-radius: 12px;
+  padding: 16px;
+  color: white;
+  text-align: left;
+}
+
+.tool strong {
+  display: block;
+  color: #d5aaff;
+  margin-bottom: 8px;
+}
+
+.tool small {
+  color: #aaa0b9;
+}
+
+button {
+  cursor: pointer;
+}
+
+.tool button, .action {
+  margin-top: 12px;
+  border: none;
+  background: #8738d6;
+  color: white;
+  padding: 9px 14px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.tool button:active, .action:active {
+  transform: scale(.96);
+}
+
+.planet {
+  position: fixed;
+  right: 22px;
+  bottom: 25px;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%,#e2b7ff,#9a3df0 35%,#481078 70%,#170527);
+  border: 2px solid #d8a6ff;
+  box-shadow: 0 0 20px #a348ff, 0 0 45px #822bff;
+  z-index: 20;
+  animation: float 3s ease-in-out infinite;
+  touch-action: none;
+}
+
+.planet:before {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 28px;
+  border: 4px solid #d6a4ff;
+  border-radius: 50%;
+  left: -14px;
+  top: 20px;
+  transform: rotate(-25deg);
+  box-shadow: 0 0 12px #a64dff;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-9px); }
+}
+
+.menu {
+  position: fixed;
+  right: 18px;
+  bottom: 110px;
+  width: 220px;
+  padding: 15px;
+  background: #160c25;
+  border: 1px solid #a34dff;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #8b36ff55;
+  z-index: 19;
+  transform: translateY(25px) scale(.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.menu.open {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu button {
+  display: block;
+  width: 100%;
+  background: #28153c;
+  color: white;
+  border: 1px solid #58327c;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 7px 0;
+  text-align: left;
+}
+
+input[type=checkbox] {
+  accent-color: #b65cff;
+  width: 18px;
+  height: 18px;
+}
+
+.setting {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid #33213f;
+}
+
+footer {
+  color: #776b84;
+  text-align: center;
+  padding: 20px;
+  font-size: 12px;
+}
+
+@media(max-width:450px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 31px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">HACKING HUB</div>
+  <div class="status">● SYSTEM ONLINE</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <h1>WELCOME TO THE HUB</h1>
+  <p>Your tools. Your dashboard. Your universe.</p>
+</section>
+
+<section class="panel">
+  <h2>🚀 Dashboard</h2>
+  <p>Welcome to Hacking Hub. Explore your tools and customize your experience.</p>
+  <p style="color:#bd8aff;margin-top:12px">Version 1.0 • Purple Edition</p>
+</section>
+
+<section class="panel" id="amongus">
+  <h2>👾 Among Us Mods</h2>
+  <p style="color:#aaa0b9;margin-bottom:16px">
+    Experimental controls for your own test environment.
+  </p>
+
+  <div class="grid">
+
+    <div class="tool">
+      <strong>⚡ Speed Boost</strong>
+      <small>Demo control for a test environment.</small>
+      <button onclick="demo('Speed Boost')">Activate</button>
+    </div>
+
+    <div class="tool">
+      <strong>👁 Vision Boost</strong>
+      <small>Demo vision setting.</small>
+      <button onclick="demo('Vision Boost')">Activate</button>
+    </div>
+
+    <div class="tool">
+      <strong>📍 Teleport</strong>
+      <small>Teleport demo for a test map.</small>
+      <button onclick="demo('Teleport')">Activate</button>
+    </div>
+
+    <div class="tool">
+      <strong>👻 Noclip</strong>
+      <small>Collision demo for your own game.</small>
+      <button onclick="demo('Noclip')">Activate</button>
+    </div>
+
+    <div class="tool">
+      <strong>🎭 Impostor Luck</strong>
+      <small>Custom test-game probability setting.</small>
+      <button onclick="demo('Impostor Luck')">Configure</button>
+    </div>
+
+    <div class="tool">
+      <strong>🛡 Lobby Safety</strong>
+      <small>Review suspicious activity in a test lobby.</small>
+      <button onclick="demo('Lobby Safety')">Open</button>
+    </div>
+
+  </div>
+</section>
+
+<section class="panel" id="scripts">
+  <h2>📜 My Scripts</h2>
+  <p style="color:#aaa0b9">
+    Your personal script library will live here.
+  </p>
+  <button class="action" onclick="demo('Script Library')">Open Script Library</button>
+</section>
+
+<section class="panel" id="settings">
+  <h2>⚙ Settings</h2>
+
+  <div class="setting">
+    <span>Planet Button</span>
+    <input type="checkbox" checked onchange="togglePlanet(this)">
+  </div>
+
+  <div class="setting">
+    <span>Glow Effects</span>
+    <input type="checkbox" checked onchange="toggleGlow(this)">
+  </div>
+
+  <div class="setting">
+    <span>Animations</span>
+    <input type="checkbox" checked onchange="toggleAnimations(this)">
+  </div>
+</section>
+
+<section class="panel" id="install">
+  <h2>📲 Install Hacking Hub</h2>
+  <p style="color:#aaa0b9;margin-bottom:15px">
+    Add Hacking Hub to your iPad or iPhone Home Screen.
+  </p>
+
+  <p>1. Open this website in Safari.</p>
+  <p style="margin-top:10px">2. Tap the Share button.</p>
+  <p style="margin-top:10px">3. Select Add to Home Screen.</p>
+  <p style="margin-top:10px">4. Tap Add.</p>
+
+  <p style="color:#c38aff;margin-top:15px">
+    Hacking Hub will appear on your Home Screen!
+  </p>
+</section>
+
+<footer>
+  HACKING HUB © 2026 • Built for the future 💜
+</footer>
+
+</main>
+
+<div class="menu" id="menu">
+  <h3 style="color:#c38aff;margin-bottom:10px">QUICK MENU</h3>
+  <button onclick="go('home')">🏠 Home</button>
+  <button onclick="go('amongus')">👾 Among Us Mods</button>
+  <button onclick="go('scripts')">📜 Scripts</button>
+  <button onclick="go('settings')">⚙ Settings</button>
+  <button onclick="go('install')">📲 Install App</button>
+</div>
+
+<button class="planet" id="planet" aria-label="Open menu"></button>
+
+<script>
+const planet = document.getElementById("planet");
+const menu = document.getElementById("menu");
+
+planet.addEventListener("click", () => {
+  menu.classList.toggle("open");
+});
+
+function go(id) {
+  document.getElementById(id).scrollIntoView({
+    behavior: "smooth"
+  });
+  menu.classList.remove("open");
+}
+
+function demo(name) {
+  alert(name + " is a demo control. Connect it to your own test environment to make it functional.");
+}
+
+function togglePlanet(input) {
+  planet.style.display = input.checked ? "block" : "none";
+  menu.classList.remove("open");
+}
+
+function toggleGlow(input) {
+  planet.style.boxShadow = input.checked
+    ? "0 0 20px #a348ff, 0 0 45px #822bff"
+    : "none";
+}
+
+function toggleAnimations(input) {
+  planet.style.animation = input.checked
+    ? "float 3s ease-in-out infinite"
+    : "none";
+}
+
+// Allow dragging the purple planet around.
+let dragging = false;
+let moved = false;
+let startX = 0;
+let startY = 0;
+let originalX = 0;
+let originalY = 0;
+
+planet.addEventListener("pointerdown", e => {
+  dragging = true;
+  moved = false;
+  startX = e.clientX;
+  startY = e.clientY;
+  const rect = planet.getBoundingClientRect();
+  originalX = rect.left;
+  originalY = rect.top;
+  planet.setPointerCapture(e.pointerId);
+});
+
+planet.addEventListener("pointermove", e => {
+  if (!dragging) return;
+
+  const dx = e.clientX - startX;
+  const dy = e.clientY - startY;
+
+  if (Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true;
+
+  if (moved) {
+    planet.style.left = Math.max(0, originalX + dx) + "px";
+    planet.style.top = Math.max(0, originalY + dy) + "px";
+    planet.style.right = "auto";
+    planet.style.bottom = "auto";
+  }
+});
+
+planet.addEventListener("pointerup", () => {
+  dragging = false;
+  if (moved) {
+    planet.dataset.dragged = "true";
+    setTimeout(() => planet.dataset.dragged = "false", 100);
+  }
+});
+</script>
+
+</body>
+</html>
